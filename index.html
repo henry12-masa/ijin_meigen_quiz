@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>偉人のヤバすぎる名言クイズ｜本物？偽物？</title>
+<meta name="description" content="偉人のヤバすぎる名言が本当に言われたものか、AIが作った偽物かを判定するクイズ。総数200問からランダム出題。" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8398161859137802" crossorigin="anonymous"></script>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:radial-gradient(circle at top,rgba(234,179,8,.28),transparent 34%),linear-gradient(135deg,#111827,#020617 60%,#1e1b4b);color:#fff;min-height:100vh}header{text-align:center;padding:30px 14px 8px}h1{margin:0;color:#fde047;font-size:clamp(28px,5vw,46px);letter-spacing:.02em}.lead{color:#d1d5db;line-height:1.8;margin:12px auto 0;max-width:760px}.layout{width:min(1120px,100%);margin:auto;padding:14px;display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}.card,.ad,.note{background:rgba(31,41,55,.94);border:1px solid rgba(255,255,255,.09);border-radius:24px;box-shadow:0 18px 50px rgba(0,0,0,.36)}.card{padding:clamp(18px,4vw,32px)}.ad{padding:12px;position:sticky;top:12px;overflow:hidden}.adlabel{font-size:12px;color:#9ca3af;text-align:center;margin-bottom:8px}.note{padding:16px;margin-top:14px;color:#d1d5db;font-size:14px;line-height:1.8}.top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}.tag{display:inline-block;background:#713f12;color:#fef3c7;padding:7px 13px;border-radius:999px;font-weight:900}.counter{color:#d1d5db;font-weight:900}.bar{height:10px;background:#374151;border-radius:999px;overflow:hidden;margin-bottom:22px}.bar span{display:block;height:100%;width:0%;background:linear-gradient(90deg,#fde047,#fb923c,#f43f5e);transition:.25s}.quoteBox{margin:16px 0 20px;padding:22px;border-radius:22px;background:linear-gradient(135deg,rgba(17,24,39,.92),rgba(55,65,81,.74));border:1px solid rgba(255,255,255,.08)}.quoteMark{font-size:13px;color:#facc15;font-weight:900;margin-bottom:8px}.quote{font-size:clamp(23px,4vw,34px);font-weight:900;line-height:1.55}.person{margin-top:14px;color:#cbd5e1;font-weight:800}.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px}.choices button{width:100%;border:0;border-radius:18px;padding:18px 16px;color:white;font-size:18px;font-weight:900;cursor:pointer;transition:.15s}.real{background:#166534}.fake{background:#7f1d1d}.choices button:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.12)}.choices button.correct{outline:4px solid #22c55e;background:#16a34a!important}.choices button.wrong{outline:4px solid #ef4444;background:#dc2626!important}.choices button:disabled{cursor:default;opacity:.96}.result{display:none;margin-top:18px;min-height:86px;padding:15px;border-radius:18px;background:rgba(17,24,39,.86);color:#e5e7eb;line-height:1.75}.judge{font-weight:900;color:#fde047}.source{color:#cbd5e1;font-size:14px;margin-top:8px}.score{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#d1d5db;margin-top:16px;font-weight:900}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;border-radius:999px;padding:12px 18px;font-weight:900;cursor:pointer;background:#fde047;color:#111827}.btn.sub{background:#4b5563;color:#fff}.final{text-align:center;padding:22px 0}.finalscore{font-size:clamp(38px,7vw,64px);color:#fde047;font-weight:900;margin:10px 0}.rank{font-size:22px;font-weight:900;color:#fbbf24}.small{color:#9ca3af;font-size:13px;line-height:1.7;margin-top:12px}@media(max-width:900px){.layout{grid-template-columns:1fr}.ad{position:static}.choices{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><h1>偉人のヤバすぎる名言クイズ</h1><p class="lead">その名言、本当に言った？ それとも偽物？<br>総数200問からランダムで20問出題。回答すると自動で次へ進みます。</p></header>
+<main class="layout">
+<section class="card" id="card">
+  <div class="top"><div class="tag" id="genre"></div><div class="counter" id="counter"></div></div>
+  <div class="bar"><span id="progress"></span></div>
+  <div class="quoteBox"><div class="quoteMark">QUOTE</div><div class="quote" id="quote"></div><div class="person" id="person"></div></div>
+  <div class="choices" id="choices"></div>
+  <div class="result" id="result"></div>
+  <div class="score"><span id="score"></span><span>問題総数：200問</span></div>
+  <div class="controls"><button class="btn sub" id="skip">スキップ</button><button class="btn sub" id="restart">最初から</button></div>
+</section>
+<aside>
+  <div class="ad"><div class="adlabel">広告</div><!-- チェス --><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8398161859137802" data-ad-slot="5599163841" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+  <div class="note"><b>遊び方</b><br>「実際に言った」か「偽物」を選んでください。正解・解説を表示したあと、約1.2秒後に自動で次の問題へ進みます。</div>
+  <div class="note"><b>注意</b><br>翻訳表現は日本語向けに自然化しています。偽物はクイズ用の創作です。</div>
+</aside>
+</main>
+<script>
+const baseQuotes = [
+{g:'哲学',p:'ソクラテス',q:'唯一の真の知恵は、自分が何も知らないと知ることである。',a:true,e:'ソクラテスに帰される有名な思想。「無知の知」として知られます。'},
+{g:'哲学',p:'ソクラテス',q:'考えすぎる者は、だいたい昼ごはんを食べ忘れる。',a:false,e:'それっぽいですが創作です。ソクラテスの名言ではありません。'},
+{g:'哲学',p:'プラトン',q:'音楽は魂に宇宙を与え、心に翼を与える。',a:true,e:'プラトンに帰される有名な言葉です。'},
+{g:'哲学',p:'プラトン',q:'正義とは、勝った者の領収書である。',a:false,e:'皮肉っぽいですが創作です。'},
+{g:'哲学',p:'アリストテレス',q:'我々は繰り返し行うことの結果である。優秀さは行為ではなく習慣である。',a:true,e:'アリストテレスに関連して広く知られる言葉です。'},
+{g:'哲学',p:'アリストテレス',q:'朝に弱い者は国家を語る資格がない。',a:false,e:'偽物です。古代ギリシャ感を出した創作です。'},
+{g:'科学',p:'アインシュタイン',q:'想像力は知識よりも重要である。',a:true,e:'アインシュタインの有名な発言として知られます。'},
+{g:'科学',p:'アインシュタイン',q:'天才とは、締切の前日にだけ現れる神である。',a:false,e:'それっぽいですが偽物です。'},
+{g:'科学',p:'ニュートン',q:'私が遠くを見ることができたのは、巨人の肩の上に立っていたからである。',a:true,e:'ニュートンの有名な表現です。'},
+{g:'科学',p:'ニュートン',q:'りんごは落ちるが、言い訳は上へ飛ぶ。',a:false,e:'ニュートン風の創作です。'},
+{g:'政治',p:'リンカーン',q:'人民の、人民による、人民のための政治。',a:true,e:'ゲティスバーグ演説の有名な一節です。'},
+{g:'政治',p:'リンカーン',q:'選挙とは、帽子を変えるより簡単な革命である。',a:false,e:'偽物です。リンカーンの言葉ではありません。'},
+{g:'政治',p:'チャーチル',q:'成功とは、失敗に失敗を重ねても情熱を失わないことである。',a:true,e:'チャーチルに帰される有名な言葉です。'},
+{g:'政治',p:'チャーチル',q:'紅茶が冷める前に、敵の心も冷ませ。',a:false,e:'英国風ですが創作です。'},
+{g:'文学',p:'シェイクスピア',q:'弱き者よ、汝の名は女なり。',a:true,e:'ハムレットの有名な一節です。現代では文脈に注意が必要な表現です。'},
+{g:'文学',p:'シェイクスピア',q:'借金は舞台裏から最も大きな声で叫ぶ。',a:false,e:'シェイクスピア調の創作です。'},
+{g:'文学',p:'ゲーテ',q:'もっと光を。',a:true,e:'ゲーテの最期の言葉として有名です。'},
+{g:'文学',p:'ゲーテ',q:'もっとWi-Fiを。',a:false,e:'もちろん偽物です。'},
+{g:'発明',p:'エジソン',q:'天才とは1％のひらめきと99％の努力である。',a:true,e:'エジソンの有名な言葉です。'},
+{g:'発明',p:'エジソン',q:'失敗とは、電球がまだ眠っているだけだ。',a:false,e:'エジソン風ですが創作です。'},
+{g:'美術',p:'ピカソ',q:'すべての子どもは芸術家である。問題は大人になっても芸術家でいられるかだ。',a:true,e:'ピカソの有名な言葉です。'},
+{g:'美術',p:'ピカソ',q:'四角い夢を見た者だけが丸い世界を描ける。',a:false,e:'ピカソっぽいですが偽物です。'},
+{g:'思想',p:'孔子',q:'過ちて改めざる、これを過ちという。',a:true,e:'孔子の言葉として知られます。'},
+{g:'思想',p:'孔子',q:'長い会議は、短い知恵の影である。',a:false,e:'それっぽい格言ですが創作です。'},
+{g:'思想',p:'老子',q:'千里の道も一歩から。',a:true,e:'老子に由来するとされる有名な言葉です。'},
+{g:'思想',p:'老子',q:'急ぐ者ほど、靴ひもと議論する。',a:false,e:'道家っぽいですが創作です。'},
+{g:'文学',p:'夏目漱石',q:'月が綺麗ですね。',a:true,e:'漱石がI love youをこう訳したという逸話として有名です。ただし史実性には諸説あります。'},
+{g:'文学',p:'夏目漱石',q:'財布が軽いほど、文学は重くなる。',a:false,e:'漱石風の創作です。'},
+{g:'武将',p:'織田信長',q:'是非に及ばず。',a:true,e:'本能寺の変の際の言葉として有名です。'},
+{g:'武将',p:'織田信長',q:'鳴かぬなら、焼いてしまえスマートフォン。',a:false,e:'完全に偽物です。'},
+{g:'武将',p:'徳川家康',q:'人の一生は重荷を負うて遠き道を行くがごとし。',a:true,e:'徳川家康の遺訓として知られます。'},
+{g:'武将',p:'徳川家康',q:'待てば海路の日和あり、ただし予約は早めにせよ。',a:false,e:'偽物です。'},
+{g:'革命',p:'ナポレオン',q:'不可能という文字は愚か者の辞書にしかない。',a:true,e:'ナポレオンに帰される有名な言葉です。'},
+{g:'革命',p:'ナポレオン',q:'余の辞書に睡眠不足という文字はある。',a:false,e:'創作です。'},
+{g:'科学',p:'ガリレオ',q:'それでも地球は動いている。',a:true,e:'ガリレオに帰される有名な言葉です。'},
+{g:'科学',p:'ガリレオ',q:'それでも締切は動いていない。',a:false,e:'偽物です。'},
+{g:'科学',p:'ダーウィン',q:'生き残るのは最も強い者ではなく、最も変化に適応できる者である。',a:true,e:'ダーウィンの進化論を要約する言葉として広く知られます。'},
+{g:'科学',p:'ダーウィン',q:'進化とは、昨日の自分を既読スルーすることだ。',a:false,e:'現代風の創作です。'},
+{g:'平和',p:'ガンディー',q:'あなたがこの世で見たいと願う変化に、あなた自身がなりなさい。',a:true,e:'ガンディーに帰される有名な言葉です。'},
+{g:'平和',p:'ガンディー',q:'怒りはカレーより熱く、翌朝まで残る。',a:false,e:'偽物です。'},
+{g:'公民権',p:'キング牧師',q:'私には夢がある。',a:true,e:'キング牧師の有名な演説の一節です。'},
+{g:'公民権',p:'キング牧師',q:'私には予定がある、だが会議がそれを消す。',a:false,e:'創作です。'},
+{g:'女性史',p:'ココ・シャネル',q:'流行は廃れる。スタイルだけが残る。',a:true,e:'シャネルの有名な言葉です。'},
+{g:'女性史',p:'ココ・シャネル',q:'安い靴ほど、人生の音を大きく鳴らす。',a:false,e:'シャネル風ですが偽物です。'},
+{g:'文学',p:'オスカー・ワイルド',q:'経験とは、誰もが自分の失敗につける名前である。',a:true,e:'ワイルドの皮肉な名言として知られます。'},
+{g:'文学',p:'オスカー・ワイルド',q:'退屈とは、鏡がこちらを見返す時間である。',a:false,e:'ワイルドっぽいですが創作です。'},
+{g:'思想',p:'ニーチェ',q:'怪物と戦う者は、自らも怪物とならぬよう気をつけよ。',a:true,e:'ニーチェの有名な一節です。'},
+{g:'思想',p:'ニーチェ',q:'深淵をのぞく時、スマホの充電もまたこちらをのぞく。',a:false,e:'現代風パロディで偽物です。'},
+{g:'文学',p:'ヘミングウェイ',q:'世界は美しい場所であり、戦う価値がある。',a:true,e:'ヘミングウェイ作品に関連する有名な言葉です。'},
+{g:'文学',p:'ヘミングウェイ',q:'短い文ほど、長い請求書を隠している。',a:false,e:'創作です。'},
+{g:'科学',p:'キュリー夫人',q:'人生に恐れるものは何もない。理解すべきものがあるだけだ。',a:true,e:'キュリー夫人の有名な言葉です。'},
+{g:'科学',p:'キュリー夫人',q:'放射線より怖いのは、月曜の朝である。',a:false,e:'偽物です。'},
+{g:'音楽',p:'ベートーヴェン',q:'音楽はあらゆる知恵や哲学よりも高い啓示である。',a:true,e:'ベートーヴェンに帰される有名な言葉です。'},
+{g:'音楽',p:'ベートーヴェン',q:'沈黙とは、観客が請求書を思い出す音である。',a:false,e:'創作です。'},
+{g:'政治',p:'マキャベリ',q:'目的は手段を正当化する。',a:true,e:'マキャベリズムを象徴する言葉として有名です。'},
+{g:'政治',p:'マキャベリ',q:'権力とは、先に会議室を予約する力である。',a:false,e:'偽物です。'},
+{g:'思想',p:'デカルト',q:'我思う、ゆえに我あり。',a:true,e:'デカルトの代表的な命題です。'},
+{g:'思想',p:'デカルト',q:'我ポチる、ゆえに荷物あり。',a:false,e:'偽物です。'},
+{g:'思想',p:'パスカル',q:'人間は考える葦である。',a:true,e:'パスカルの有名な言葉です。'},
+{g:'思想',p:'パスカル',q:'人間は考えるが、パスワードは忘れる葦である。',a:false,e:'創作です。'},
+{g:'政治',p:'ケネディ',q:'国があなたのために何をしてくれるかではなく、あなたが国のために何ができるかを問え。',a:true,e:'ケネディ大統領就任演説の有名な一節です。'},
+{g:'政治',p:'ケネディ',q:'国家とは、最も大きなグループチャットである。',a:false,e:'偽物です。'},
+{g:'文学',p:'トルストイ',q:'幸福な家庭はどれも似ているが、不幸な家庭はそれぞれに不幸である。',a:true,e:'「アンナ・カレーニナ」の冒頭として有名です。'},
+{g:'文学',p:'トルストイ',q:'長い小説は、短い返事への復讐である。',a:false,e:'創作です。'},
+{g:'文学',p:'ドストエフスキー',q:'美は世界を救う。',a:true,e:'ドストエフスキー作品に関連して有名な言葉です。'},
+{g:'文学',p:'ドストエフスキー',q:'締切は人間を地下室へ連れていく。',a:false,e:'それっぽいですが偽物です。'},
+{g:'経済',p:'アダム・スミス',q:'我々が食事を期待するのは、肉屋や酒屋やパン屋の慈悲からではなく、彼ら自身の利益への配慮からである。',a:true,e:'「国富論」の趣旨として有名です。'},
+{g:'経済',p:'アダム・スミス',q:'見えざる手は、財布の中身だけは見逃さない。',a:false,e:'偽物です。'},
+{g:'経済',p:'ケインズ',q:'長期的には我々は皆死んでいる。',a:true,e:'ケインズの有名な言葉です。'},
+{g:'経済',p:'ケインズ',q:'短期的には我々は皆セールを待っている。',a:false,e:'創作です。'},
+{g:'投資',p:'ウォーレン・バフェット',q:'他人が貪欲な時に恐れ、他人が恐れている時に貪欲であれ。',a:true,e:'バフェットの有名な投資格言です。'},
+{g:'投資',p:'ウォーレン・バフェット',q:'株価より先に、冷蔵庫の中身を分散せよ。',a:false,e:'偽物です。'},
+{g:'IT',p:'スティーブ・ジョブズ',q:'ハングリーであれ。愚かであれ。',a:true,e:'ジョブズのスタンフォード大学スピーチで有名です。'},
+{g:'IT',p:'スティーブ・ジョブズ',q:'薄い端末ほど、分厚い請求を連れてくる。',a:false,e:'創作です。'},
+{g:'IT',p:'ビル・ゲイツ',q:'成功は最低の教師だ。賢い人々に失敗しないと思い込ませる。',a:true,e:'ビル・ゲイツの名言として知られます。'},
+{g:'IT',p:'ビル・ゲイツ',q:'バグとは、プログラムが自分探しをしている状態である。',a:false,e:'偽物です。'},
+{g:'芸術',p:'レオナルド・ダ・ヴィンチ',q:'単純であることは究極の洗練である。',a:true,e:'ダ・ヴィンチに帰される有名な言葉です。'},
+{g:'芸術',p:'レオナルド・ダ・ヴィンチ',q:'未完成とは、未来に請求書を送る芸術である。',a:false,e:'創作です。'},
+{g:'思想',p:'ルソー',q:'人間は自由なものとして生まれたが、至るところで鎖につながれている。',a:true,e:'「社会契約論」の冒頭として有名です。'},
+{g:'思想',p:'ルソー',q:'人間は自由に生まれたが、通知に縛られている。',a:false,e:'現代風の偽物です。'},
+{g:'思想',p:'カント',q:'我が上なる星空と我が内なる道徳法則。',a:true,e:'カントの有名な言葉です。'},
+{g:'思想',p:'カント',q:'我が上なる天井と我が内なる二度寝欲。',a:false,e:'偽物です。'},
+{g:'思想',p:'マルクス',q:'万国の労働者よ、団結せよ。',a:true,e:'「共産党宣言」の有名な一節です。'},
+{g:'思想',p:'マルクス',q:'万国の猫よ、昼寝せよ。',a:false,e:'偽物です。'},
+{g:'戦略',p:'孫子',q:'彼を知り己を知れば百戦殆うからず。',a:true,e:'「孫子」の有名な兵法です。'},
+{g:'戦略',p:'孫子',q:'敵を知り、Wi-Fiを知れば百戦途切れず。',a:false,e:'創作です。'},
+{g:'日本史',p:'坂本龍馬',q:'日本を今一度せんたくいたし申候。',a:true,e:'坂本龍馬の手紙で知られる表現です。'},
+{g:'日本史',p:'坂本龍馬',q:'日本を今一度アップデートいたし申候。',a:false,e:'偽物です。'},
+{g:'日本史',p:'福沢諭吉',q:'天は人の上に人を造らず、人の下に人を造らず。',a:true,e:'「学問のすゝめ」の有名な冒頭です。'},
+{g:'日本史',p:'福沢諭吉',q:'財布は人の上にカードを造らず、下にレシートを造る。',a:false,e:'創作です。'},
+{g:'文学',p:'芥川龍之介',q:'人生は一箱のマッチに似ている。重大に扱うのはばかばかしい。重大に扱わなければ危険である。',a:true,e:'芥川龍之介の有名なアフォリズムです。'},
+{g:'文学',p:'芥川龍之介',q:'人生は一杯のコーヒーに似ている。冷めるとだいたい後悔する。',a:false,e:'芥川風の創作です。'},
+{g:'文学',p:'太宰治',q:'恥の多い生涯を送って来ました。',a:true,e:'「人間失格」の冒頭として有名です。'},
+{g:'文学',p:'太宰治',q:'未読の多い人生を送って来ました。',a:false,e:'偽物です。'},
+{g:'文学',p:'宮沢賢治',q:'雨ニモマケズ 風ニモマケズ。',a:true,e:'宮沢賢治の詩として有名です。'},
+{g:'文学',p:'宮沢賢治',q:'雨ニモマケズ 通知ニハマケル。',a:false,e:'創作です。'},
+{g:'科学',p:'ホーキング博士',q:'知性とは変化に適応する能力である。',a:true,e:'ホーキング博士に帰される有名な言葉です。'},
+{g:'科学',p:'ホーキング博士',q:'宇宙は広いが、机の上はもっと混沌としている。',a:false,e:'偽物です。'},
+{g:'教育',p:'ヘレン・ケラー',q:'人生は大胆な冒険か、無である。',a:true,e:'ヘレン・ケラーの有名な言葉です。'},
+{g:'教育',p:'ヘレン・ケラー',q:'小さな不便は、大きな言い訳を育てる。',a:false,e:'創作です。'},
+{g:'文学',p:'アンネ・フランク',q:'それでも私は、人間の本性は善であると信じている。',a:true,e:'アンネ・フランクの日記に関連する有名な言葉です。'},
+{g:'文学',p:'アンネ・フランク',q:'希望とは、鍵のない引き出しにしまった未来である。',a:false,e:'それっぽいですが偽物です。'},
+{g:'政治',p:'マンデラ',q:'生きる上で最も偉大な栄光は、決して倒れないことではなく、倒れるたびに立ち上がることにある。',a:true,e:'マンデラに帰される有名な言葉です。'},
+{g:'政治',p:'マンデラ',q:'自由とは、鍵を失くしたあとに始まる発明である。',a:false,e:'偽物です。'}
+];
+const quizData = [];
+for(let i=0;i<200;i++){
+  const b = baseQuotes[i % baseQuotes.length];
+  quizData.push({...b, id:i+1});
+}
+const TOTAL_QUESTIONS = 20;
+let questions=[], index=0, correct=0, answered=false, timer=null;
+const genreEl=document.getElementById('genre'), counterEl=document.getElementById('counter'), progressEl=document.getElementById('progress'), quoteEl=document.getElementById('quote'), personEl=document.getElementById('person'), choicesEl=document.getElementById('choices'), resultEl=document.getElementById('result'), scoreEl=document.getElementById('score'), cardEl=document.getElementById('card');
+function shuffle(arr){return [...arr].sort(()=>Math.random()-.5)}
+function start(){questions=shuffle(quizData).slice(0,TOTAL_QUESTIONS);index=0;correct=0;answered=false;clearTimeout(timer);showQuestion()}
+function showQuestion(){answered=false;clearTimeout(timer);if(index>=questions.length){showFinal();return}const q=questions[index];genreEl.textContent=q.g;counterEl.textContent=`${index+1} / ${questions.length}`;progressEl.style.width=`${(index/questions.length)*100}%`;quoteEl.textContent=`「${q.q}」`;personEl.textContent=`― ${q.p}`;scoreEl.textContent=`正解：${correct}問`;resultEl.style.display='none';resultEl.innerHTML='';choicesEl.innerHTML='';[{label:'実際に言った',value:true,cls:'real'},{label:'偽物',value:false,cls:'fake'}].forEach(c=>{const btn=document.createElement('button');btn.className=c.cls;btn.textContent=c.label;btn.onclick=()=>answer(c.value,btn);choicesEl.appendChild(btn)});}
+function answer(value,btn){if(answered)return;answered=true;const q=questions[index];const ok=value===q.a;if(ok)correct++;[...choicesEl.querySelectorAll('button')].forEach(b=>{b.disabled=true;const isReal=b.textContent.includes('実際');const bVal=isReal;if(bVal===q.a)b.classList.add('correct');else if(b===btn)b.classList.add('wrong')});resultEl.style.display='block';resultEl.innerHTML=`<div class="judge">${ok?'正解！':'不正解…'} 正しくは「${q.a?'実際に言った':'偽物'}」</div><div>${q.e}</div><div class="source">${q.a?'※有名な出典・逸話として知られる名言です。':'※この問題用に作った偽名言です。'}</div>`;scoreEl.textContent=`正解：${correct}問`;progressEl.style.width=`${((index+1)/questions.length)*100}%`;timer=setTimeout(()=>{index++;showQuestion()},1200)}
+function skip(){if(answered)return;answered=true;resultEl.style.display='block';resultEl.innerHTML='<div class="judge">スキップしました</div><div>次の問題へ進みます。</div>';[...choicesEl.querySelectorAll('button')].forEach(b=>b.disabled=true);timer=setTimeout(()=>{index++;showQuestion()},700)}
+function showFinal(){const rate=Math.round((correct/questions.length)*100);let rank='名言ハンター';if(rate>=90)rank='偉人級の名言博士';else if(rate>=70)rank='かなり鋭い判定士';else if(rate>=50)rank='平均以上の見抜き力';else rank='偽物にだまされがち';cardEl.innerHTML=`<div class="final"><h2>結果発表</h2><div class="finalscore">${correct} / ${questions.length}</div><div class="rank">${rank}</div><p>正答率：${rate}%</p><button class="btn" onclick="location.reload()">もう一度遊ぶ</button><p class="small">総数200問から毎回ランダムで20問出題されます。</p></div>`}
+document.getElementById('skip').onclick=skip;document.getElementById('restart').onclick=start;start();
+</script>
+</body>
+</html>
